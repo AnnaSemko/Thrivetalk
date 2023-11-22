@@ -1,0 +1,62 @@
+.you-should-know {
+    background: #fff;
+
+    &__image {
+        padding: 0 0 45% 0;
+        @media (min-width: $mobile) {
+            flex: 0 0 40%;
+        }
+        img {
+            object-position: center;
+        }
+    }
+
+    &__content {
+        @include adaptiveValue("padding", 50, 30);
+        @media (min-width: $mobile) {
+            @include adaptiveValue("padding-left", 100, 30);
+        }
+    }
+    &__container {
+        padding: 0;
+        margin: 0;
+    }
+
+    &__body {
+        @media (max-width: $mobile) {
+            gap: 30px;
+            text-align: center;
+        }
+        @media (min-width: $mobile) {
+            width: 60%;
+            padding-right: 50px;
+        }
+        display: flex;
+        flex-direction: column;
+        gap: rem(150);
+    }
+    &__title {
+    }
+
+    &__text {
+        color: #22356f;
+        @include adaptiveValue("font-size", 36, 22);
+        font-weight: 700;
+        line-height: 130%;
+        letter-spacing: -0.36px;
+        a {
+            color: $lightBlue;
+        }
+    }
+
+    &__link {
+        color: #fab63e;
+        transition: all 0.3s ease 0s;
+        &:hover {
+            text-shadow: 0px 0px 3px #fab63e;
+            transition: all 0.3s ease 0s;
+    
+        }
+    }
+}
+

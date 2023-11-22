@@ -1,0 +1,56 @@
+.why-thrive {
+    background-color: $lightBlue;
+    color: #fff;
+    @media (max-width: $mobile) {
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    &__content {
+
+    }
+
+    &__container {
+    }
+
+    &__body {
+        @media (min-width: $mobile) {
+            width: 60%;
+            padding: 0px rem(50) 0px 0px;
+            @include adaptiveValue("padding-top", 155, 50);
+        }
+        @media (max-width: $mobile) {
+            padding: rem(20) 0 0px 0px;
+        }
+    }
+
+    &__title {
+        @include adaptiveValue("font-size", 36, 25, 1300, 767.98, 1);
+        font-weight: 700;
+        line-height: 170%;
+        letter-spacing: -0.216px;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 75, 20);
+        }
+    }
+
+    &__text {
+        @include adaptiveValue("margin-bottom", 95, 20);
+        font-weight: 700;
+        line-height: 170%;
+        span {
+            font-weight: 400;
+        }
+    }
+
+    &__image {
+        padding: 0px 0px 45% 0px;
+        @media (min-width: $mobile) {
+            flex: 0 0 40%;
+            transform: translate(-100%, 0);
+            img {
+                object-position: 0 0;
+            }
+        }
+    }
+}

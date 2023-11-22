@@ -1,0 +1,92 @@
+.mainpage {
+    @include adaptiveValue("padding-top", 70, 20);
+    @include adaptiveValue("font-size", 24, 18);
+    color: $darkBlue;
+}
+.thrivetalk {
+    @media (max-width: $mobile) {
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+
+    &__content {
+        &:not(:last-child) {
+            margin-bottom: rem(20);
+        }
+    }
+
+    &__container {
+    }
+
+    &__body {
+        padding-top: rem(70);
+        @media (min-width: $mobile) {
+            width: 45%;
+        }
+    }
+
+    &__subtitle {
+        color: $lightBlue;
+        font-weight: 700;
+        letter-spacing: -0.84px;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 60, 20);
+        }
+    }
+
+    &__title {
+        @include adaptiveValue("font-size", 48, 30, 1300, 767.98, 1);
+        font-weight: 700;
+        letter-spacing: -1.68px;
+        line-height: 130%;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 60, 20);
+        }
+    }
+
+    &__text {
+         @include adaptiveValue("font-size", 24, 18, 1300, 767.98, 1);
+        font-weight: 400;
+        line-height: 170%;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 50, 20);
+        }
+    }
+
+    &__button {
+        padding: rem(10) rem(30);
+    }
+
+    &__image {
+        padding: 0px 0px 50% 0px;
+        @media (min-width: $mobile) {
+            flex: 0 0 55%;
+            transform: translate(-100%, 0);
+        }
+    }
+    &__buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        align-items: center;
+        @media (max-width: $mobile) {
+            justify-content: center;
+        }
+    }
+}
+.button {
+    color: #f9b640;
+    font-size: rem(16);
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    line-height: 130%;
+    text-align: center;
+    transition: all 0.5s ease 0s;
+    &:hover {
+        background-color: #f9b640;
+        color: #fff;
+        transition: all 0.5s ease 0s;
+    }
+}

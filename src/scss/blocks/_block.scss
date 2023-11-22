@@ -1,0 +1,55 @@
+.block {
+    padding-top: rem(20);
+    padding-bottom: rem(20);
+    background-color: #fff;
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+        @media (max-width: $mobile) {
+            justify-content: center;
+            align-items: start;
+            text-align: center;
+        }
+    }
+
+    &__item {
+        @media (min-width: $mobile) {
+            flex: 0 0 33.333%;
+            
+        }
+        min-width: 200px;
+        
+        @include adaptiveValue("padding-left", 70, 5);
+        @include adaptiveValue("padding-right", 70, 5);
+        @include adaptiveValue("padding-top", 30, 20);
+        @include adaptiveValue("padding-bottom", 20, 20);
+    }
+}
+.item-block {
+    transition: all 0.5s ease 0s;
+    &:hover {
+        background-color: $mainPageBgColor;
+        transition: all 0.5s ease 0s;
+    }
+    &__body {
+        max-width: 500px;
+        display: grid;
+        gap: rem(10);
+    }
+
+    &__title {
+        @include adaptiveValue("font-size", 28, 20);
+        font-weight: 400;
+        line-height: 130%;
+        letter-spacing: -0.84px;
+    }
+
+    &__text {
+        color: rgba(34, 53, 111, 0.5);
+        font-size: rem(16);
+        font-weight: 400;
+        line-height: 130%;
+        letter-spacing: -0.48px;
+    }
+}

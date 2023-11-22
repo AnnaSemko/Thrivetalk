@@ -1,0 +1,137 @@
+.popup {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    font-family: "Larsseit";
+    background-color: rgba(0, 0, 0, 0.685);
+    top: 0;
+    left: 0;
+    z-index: 50;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.5s ease 0s;
+    .open {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &__body {
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: rem(30) rem(10);
+    }
+
+    &__content {
+        border-radius: rem(20);
+        background-color: $mainPageBgColor;
+        color: $darkBlue;
+        max-width: 800px;
+        @include adaptiveValue("padding", 30, 15);
+        position: relative;
+        opacity: 0;
+        transition: all 0.5s ease 0s;
+        transform: perspective(600px) translate(0, -100%) rotateX(45deg);
+    }
+
+    &__close {
+        display: inline-block;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        @include adaptiveValue("top", -20, -10);
+        left: 98%;
+
+        @media (max-width: $mobile) {
+            left: 95%;
+        }
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            background-color: $darkBlue;
+        }
+        &::after {
+            transform: rotate(-45deg);
+        }
+        &::before {
+            transform: rotate(45deg);
+        }
+    }
+
+    &__title {
+    }
+
+    &__text {
+    }
+}
+.popup.open {
+    visibility: visible;
+    opacity: 1;
+}
+.popup.open .popup__content {
+    transform: perspective(600px) translate(0, 0) rotateX(0);
+    opacity: 1;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: rem(30);
+    text-transform: uppercase;
+
+    &__text {
+        @include adaptiveValue("font-size", 25, 18);
+        color: $lightBlue;
+        font-weight: 700;
+        line-height: 0%;
+        letter-spacing: -0.84px;
+        line-height: 100%;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: rem(30);
+    }
+    &__item_buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        position: relative;
+    }
+
+    &__title {
+        @include adaptiveValue("font-size", 20, 18);
+    }
+
+    &__input {
+        @include adaptiveValue("height", 60, 40);
+        border-radius: rem(10);
+        padding: rem(15);
+        font-family: "Larsseit";
+        font-size: rem(20);
+        color: $darkBlue;
+    }
+
+    &__button {
+        text-transform: uppercase;
+        font-family: "Larsseit";
+        font-size: rem(20);
+        background-color: $lightBlue;
+        color: #fff;
+        padding: rem(15) rem(25);
+        border-radius: rem(30);
+        width: 130px;
+        &:hover {
+            box-shadow: 0px 0px 2px 1px $lightBlue;
+            transition: all 0.3s ease 0s;
+        }
+    }
+}
+

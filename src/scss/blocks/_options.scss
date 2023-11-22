@@ -1,0 +1,124 @@
+.options {
+    color: #fff;
+    @include adaptiveValue("font-size", 32, 25);
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: -0.192px;
+    overflow: hidden;
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        transition: all 0.5s ease 0s;
+        &:hover {
+            transition: all 0.5s ease 0s;
+        }
+        @include adaptiveValue("height", 480, 200, 1300, 767.98, 1);
+        min-width: 280px;
+        @media (min-width: $mobile) {
+            flex: 1 1 33.333%;
+        }
+        @media (max-width: $mobile) {
+            flex: 1 1 50%;
+        }
+        @media (max-width: $mobileSmall) {
+            flex: 1 1 100%;
+        }
+        &_dark {
+            background: $darkBlue;
+            &:hover {
+                background: #13255b;
+            }
+        }
+        &_dark-blue {
+            background-color: #0052c1;
+            &:hover {
+                background: #1b68d4;
+            }
+        }
+        &_img {
+            background: url(../img/strawberry.jpg) 0 0 / cover no-repeat;
+            position: relative;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    background-color: #9000ff23;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 0;
+                    opacity: 0;
+                    transition: all 0.5s ease 0s;
+                }
+                &:hover {
+                    &::before {
+                        opacity: 1;
+                        transition: all 0.5s ease 0s;
+                    }
+                }
+        }
+        &_blue {
+            background-color: #62d0df;
+            &:hover {
+                background-color: #1ebdd2;
+            }
+        }
+        &_lavender {
+            background-color: #dee1ff;
+            &:hover {
+                background-color: #b2b8f3;
+            }
+        }
+        &_violet {
+            background-color: #8f00ff;
+            &:hover {
+                background-color: #6806b4;
+            }
+        }
+    }
+
+    &__body {
+        display: flex;
+        text-align: left;
+        flex-direction: column-reverse;
+        align-items: start;
+        justify-content: center;
+        gap: rem(25);
+        @include adaptiveValue("padding-top", 95, 50, 1300, 767.98, 1);
+        padding: 0 rem(30) rem(20) rem(70);
+        &::after {
+            content: "";
+            background-color: #fff;
+            width: 100%;
+            max-width: 255px;
+            height: 1px;
+        }
+    }
+
+    &__text {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 10px;
+        transition: all 0.5s ease 0s;
+        position: relative;
+        z-index: 2;
+        &:hover {
+            transform: scale(1.1);
+            transition: all 0.5s ease 0s;
+        }
+        &::before {
+            content: "";
+            flex: 0 0 9px;
+            width: 9px;
+            height: 9px;
+            position: relative;
+            top: 15px;
+            border-radius: 50%;
+            background-color: #e9b730;
+        }
+    }
+}
